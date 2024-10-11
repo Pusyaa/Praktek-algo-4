@@ -1,0 +1,26 @@
+for i in range(7, 0, -1):
+    print(str(i) * i)
+
+#latihan 2
+bulan = int(input("Masukkan nomor bulan (1-12): "))
+tahun = int(input("Masukkan tahun: "))
+
+while bulan < 1 or bulan > 12:
+    bulan = int(input("Masukkan nomor bulan yang valid (1-12): "))
+
+if (tahun % 4 == 0 and tahun % 100 != 0) or (tahun % 400 == 0):
+    kabisat = True
+else:
+    kabisat = False
+
+if bulan == 1 or bulan == 3 or bulan == 5 or bulan == 7 or bulan == 8 or bulan == 10 or bulan == 12:
+    hari = 31
+elif bulan == 4 or bulan == 6 or bulan == 9 or bulan == 11:
+    hari = 30
+elif bulan == 2:
+    if kabisat:
+        hari = 29
+    else:
+        hari = 28
+
+print(f"Bulan {bulan} tahun {tahun} memiliki {hari} hari.")
